@@ -65,7 +65,7 @@
         import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-storage.js";
 
         // Firebase config
-       const firebaseConfig = {
+        const firebaseConfig = {
     apiKey: "AIzaSyAlWMOaRmLCr6jo9WxDt0Jw2EVDQfClaco",
     authDomain: "gcae-18509.firebaseapp.com",
     projectId: "gcae-18509",
@@ -154,7 +154,7 @@
                         progressBar.style.width = progress + '%';
                     },
                     (error) => {
-                        console.error('Error uploading image:', error);
+                        console.error('Error uploading image:', error.message);  // Show detailed error message
                     },
                     async () => {
                         const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
@@ -203,4 +203,3 @@
     </script>
 </body>
 </html>
- 
